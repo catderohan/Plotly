@@ -93,7 +93,7 @@ function buildCharts(sample) {
     }];
     // 9. Create the layout for the bar chart. 
     var barLayout = {
-      title: "Top 10 Bacteria Cultures Found"
+      title: "<b>Top 10 Bacteria Cultures Found</b>"
      
     };
     // 10. Use Plotly to plot the data with the layout. 
@@ -118,7 +118,7 @@ function buildCharts(sample) {
 
     // 2. Create the layout for the bubble chart.
     var bubbleLayout = {
-                title: "Bacteria Cultures Per Sample",
+                title: "<b>Bacteria Cultures Per Sample</b>",
                 xaxis: {title: "OTU ID"},
                 margins: " ",
                 hovermode: ""
@@ -137,7 +137,7 @@ function buildCharts(sample) {
     var metadataArray = metadata.filter(sampleObj => sampleObj.id == sample);
 
     // 2. Create a variable that holds the first sample in the metadata array.
-    var metaDataFirst = metaDataArray[0]
+    var metaDataFirst = metadataArray[0]
 
     // 3. Create a variable that holds the washing frequency.
     var Freq = metaDataFirst.wfreq
@@ -154,7 +154,7 @@ function buildCharts(sample) {
             {range: [0,2], color: "red"},
             {range: [2,4], color: "orange"},
             {range: [4,6], color: "yellow"},
-            {range: [6,8], color: "light green"},
+            {range: [6,8], color: "#6FFF33"},
             {range: [8,10], color: "green"},
           ],
         }
@@ -163,14 +163,14 @@ function buildCharts(sample) {
     
     // 5. Create the layout for the gauge chart.
     var gaugeLayout = { 
-      title: {
-        text: "Belly Button Washing Frequency </b><br> Scrubs per Week"},
-        width: 600, height: 500, margin: { t: 0, b:0}
+      title: "<b>Belly Button Washing Frequency </b><br> <b>Scrubs per Week</b>",
+      
      
+      
     };
 
     // 6. Use Plotly to plot the gauge data and layout.
-    Plotly.newPlot("gauge", gaugeData, gauageLayout);
+    Plotly.newPlot("gauge", [gaugeData], gaugeLayout);
 
   });
 }
